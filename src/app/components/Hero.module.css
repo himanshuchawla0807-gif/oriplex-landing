@@ -1,0 +1,155 @@
+/* Hero.module.css */
+.section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    /* Ensure shapes don't cause scroll */
+    background: #FFF;
+}
+
+/* Floating Shapes */
+/* Floating Shapes */
+.shapeDiamond {
+    position: absolute;
+    top: 9%;
+    right: 15%;
+    width: 75px;
+    height: 75px;
+    z-index: 1;
+    opacity: 1.2;
+}
+
+.shapeSphere {
+    position: absolute;
+    top: 27%;
+    left: 17%;
+    width: 80px;
+    height: 80px;
+    z-index: 1;
+    opacity: 1.2;
+}
+
+.textSection {
+    width: 100%;
+    position: relative;
+    padding: 7.5rem 2rem 5rem 2rem;
+    background: radial-gradient(50% 50% at 50% 40%, rgba(255, 245, 235, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+}
+
+.headline {
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #1A1A1A;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-inter), sans-serif;
+    /* Explicitly Sans */
+}
+
+.subheadline {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    font-family: var(--font-inter), sans-serif;
+    /* Explicitly Sans (Fixing subheadline serif issue) */
+}
+
+.desktopBreak {
+    display: block;
+}
+
+.ctaContainer {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Dark Button */
+.primaryButton {
+    padding: 1rem 2.5rem;
+    border-radius: 100px;
+    background: #111;
+    color: #FFF;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-inter), sans-serif;
+}
+
+.primaryButton:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #000;
+}
+
+.visualSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5rem;
+    position: relative;
+    z-index: 5;
+}
+
+.videoContainer {
+    position: relative;
+    z-index: 10;
+    width: 85%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 20px;
+    box-shadow:
+        0 20px 40px -10px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* Decorative Background Image */
+.heroBgImage {
+    position: absolute;
+    top: 1.8rem;
+    /* Start exactly where curve ends (approx) */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180%;
+    max-width: none;
+    height: auto;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: 2.5rem;
+    }
+
+    .desktopBreak {
+        display: none;
+    }
+
+    .videoContainer {
+        width: 95%;
+    }
+
+    .heroBgImage {
+        width: 250%;
+        top: 1rem;
+    }
+}

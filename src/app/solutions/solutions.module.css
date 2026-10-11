@@ -1,0 +1,288 @@
+/* Layout */
+.section {
+    padding: 120px 40px;
+    width: 100%;
+    background: #FFFFFF;
+    color: #000000;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    margin-bottom: 120px;
+    max-width: 900px;
+}
+
+.headline {
+    font-family: var(--font-poppins);
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    color: #000000;
+    letter-spacing: -0.04em;
+}
+
+.subheadline {
+    font-family: var(--font-inter);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #333333;
+    max-width: 600px;
+    font-weight: 400;
+}
+
+/* Row Layout */
+.row {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Card */
+.card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    height: 600px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.15);
+    z-index: 5;
+}
+
+/* Object Container */
+.objectContainer {
+    width: 100%;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.roleTitle {
+    font-family: var(--font-inter);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.cardDesc {
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333333;
+    font-weight: 450;
+}
+
+.readMore {
+    margin-top: auto;
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000000;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    border-bottom: 1.5px solid currentColor;
+    padding-bottom: 2px;
+}
+
+/* Modal Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px) saturate(100%);
+    z-index: 999;
+    /* Centers children */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Expanded Card - PRECISE FLIP */
+.expandedCard {
+    width: 85%;
+    max-width: 1200px;
+    height: 80vh;
+    background: #FFFFFF;
+    border-radius: 40px;
+    box-shadow: 0 40px 120px -10px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    /* Relative to Overlay Center */
+
+    transform-origin: center center;
+    will-change: transform, width, height, opacity;
+}
+
+.overlay.active .expandedCard {
+    animation: expandPrecise 0.6s cubic-bezier(0.2, 1, 0.2, 1) forwards;
+}
+
+@keyframes expandPrecise {
+    0% {
+        width: var(--w);
+        height: var(--h);
+        /* Start from calculated offset (--tx, --ty) */
+        transform: translate(var(--tx), var(--ty));
+        border-radius: 24px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 85%;
+        height: 80vh;
+        /* End at center (0,0) relative to flex overlay */
+        transform: translate(0, 0);
+        border-radius: 40px;
+        opacity: 1;
+    }
+}
+
+/* Layout */
+.expandedLeft {
+    flex: 1.2;
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    background: #FFFFFF;
+    border-right: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.expandedRight {
+    flex: 1;
+    background: #F9F9F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 0 40px 40px 0;
+}
+
+.closeButton {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #111;
+    z-index: 20;
+    transition: background 0.2s;
+}
+
+.closeButton:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Typography */
+.expandedHeadline {
+    font-family: var(--font-poppins);
+    font-size: 3rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 24px;
+    line-height: 1.1;
+    opacity: 0;
+    animation: textFadeIn 0.5s ease forwards 0.3s;
+    margin-top: 20px;
+}
+
+.expandedBody {
+    font-family: var(--font-inter);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333333;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: textFadeIn 0.5s ease forwards 0.4s;
+    max-width: 600px;
+
+    overflow-y: auto;
+    max-height: 320px;
+    padding-right: 10px;
+    scrollbar-width: none;
+}
+
+.expandedBody::-webkit-scrollbar {
+    display: none;
+}
+
+/* Blue Image - MORE SPACE FIX */
+.modalBottomImage {
+    margin-top: auto;
+    margin-bottom: 0px;
+    /* Reduced to 0 as requested ("More below") */
+    width: 100%;
+    height: auto;
+    border-radius: 32px;
+    object-fit: cover;
+    max-height: 180px;
+    opacity: 0;
+    animation: textFadeIn 0.5s ease forwards 0.5s;
+    transition: none;
+}
+
+.expandedObjectContainer {
+    transform: scale(1.6);
+    opacity: 0;
+    animation: textFadeIn 0.6s ease forwards 0.3s;
+}
+
+@keyframes textFadeIn {
+    to {
+        opacity: 1;
+    }
+}

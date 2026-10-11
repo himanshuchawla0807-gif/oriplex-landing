@@ -1,0 +1,106 @@
+/* Admin.module.css */
+.container {
+    min-height: 100vh;
+    background-color: #F9FAFB;
+    padding: 3rem;
+    font-family: var(--font-inter), sans-serif;
+    color: #111;
+}
+
+.header {
+    max-width: 1000px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.exitLink {
+    font-size: 0.9rem;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.exitLink:hover {
+    color: #000;
+}
+
+.card {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.thead {
+    background: #FAFAFA;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.th {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: #555;
+    background: #FAFAFA;
+}
+
+.tr {
+    border-bottom: 1px solid #F0F0F0;
+    transition: background 0.1s ease;
+}
+
+.tr:last-child {
+    border-bottom: none;
+}
+
+.tr:hover {
+    background: #F8F8F8;
+}
+
+.td {
+    padding: 1.25rem 1.5rem;
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.5;
+    vertical-align: top;
+}
+
+.tdTime {
+    white-space: nowrap;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.emailLink {
+    color: #2563EB;
+    text-decoration: none;
+}
+
+.emailLink:hover {
+    text-decoration: underline;
+}
+
+.emptyState {
+    padding: 4rem;
+    text-align: center;
+    color: #888;
+}

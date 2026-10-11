@@ -1,0 +1,243 @@
+/* Main container */
+.main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-white);
+    color: var(--text-primary);
+    font-family: var(--font-inter);
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* Hero Section with dark gradient background */
+.heroSection {
+    background: radial-gradient(circle at 50% 0%, #2a2a2a 0%, #1a1a1a 100%);
+    color: #fff;
+    padding: 160px 24px 120px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Subtle grid overlay for hero */
+.heroSection::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    backdrop-filter: blur(8px);
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+    line-height: 1.1;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Bento Grid Container */
+.bentoContainer {
+    max-width: 1200px;
+    margin: -60px auto 80px;
+    /* Overlap nicely with Hero */
+    padding: 0 24px;
+    position: relative;
+    z-index: 5;
+}
+
+.bentoGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+/* Feature Cards with Visuals */
+.card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    /* Unified border style */
+    border-radius: 32px;
+    overflow: hidden;
+    /* Important for visuals */
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    /* transform: translateY(-4px); Removed to keep interactively still */
+    box-shadow: 0 20px 40px -6px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Visual Area */
+.visualContainer {
+    height: 220px;
+    background: #F9FAFB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Dark Card Variant - Optional, maybe keep text style but use visual too? 
+   Let's unify to light cards for consistency with Visuals, or adapt visual BG.
+   For consistency with the new visual style, let's make all cards have white bottoms 
+   and distinctive tops.
+*/
+.darkCard .visualContainer {
+    background: #1A1A1A;
+    /* Special dark background for No Training */
+}
+
+/* Content Area */
+.cardContent {
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.cardText {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Detail Sections */
+.detailSection {
+    max-width: 1200px;
+    margin: 0 auto 120px;
+    padding: 0 24px;
+}
+
+.detailGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+/* Reuse .card style for details too if possible, or keep separate but matched */
+.detailCard {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.detailCard:hover {
+    /* transform: translateY(-4px); */
+    box-shadow: 0 20px 40px -6px rgba(0, 0, 0, 0.1);
+}
+
+.detailHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.detailTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.detailText {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.contactLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--text-primary);
+    padding-bottom: 2px;
+    transition: opacity 0.2s;
+}
+
+.contactLink:hover {
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .bentoGrid,
+    .detailGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .visualContainer {
+        height: 180px;
+    }
+}

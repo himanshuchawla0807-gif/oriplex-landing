@@ -1,0 +1,197 @@
+/* Objects.module.css */
+.container {
+    width: 220px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+}
+
+/* 1. Radar (VC) - Detailed Black Wireframe */
+.radarRing {
+    position: absolute;
+    border: 1.5px dashed #171717;
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.02);
+    /* Subtle inner rim */
+}
+
+.radarRing:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    border-color: rgba(0, 0, 0, 0.8);
+    animation-duration: 25s;
+}
+
+.radarRing:nth-child(2) {
+    width: 70%;
+    height: 70%;
+    animation-direction: reverse;
+    animation-duration: 15s;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-style: dotted;
+}
+
+.radarRing:nth-child(3) {
+    width: 40%;
+    height: 40%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.radarScan {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0%, transparent 60%);
+    top: 0;
+    right: 0;
+    border-radius: 0 100% 0 0;
+    transform-origin: 0% 100%;
+    animation: radarSweep 4s linear infinite;
+}
+
+@keyframes radarSweep {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 2. Stack (PE) - Detailed Black Wireframe */
+.stackLayer {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border: 1.5px solid #111111;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.6);
+    transform: rotateX(60deg) rotateZ(45deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    animation: floatStack 5s ease-in-out infinite;
+
+    /* Detailed inner grid */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.stackLayer:nth-child(1) {
+    animation-delay: 0s;
+    bottom: 20px;
+    z-index: 1;
+}
+
+.stackLayer:nth-child(2) {
+    animation-delay: 0.2s;
+    bottom: 50px;
+    z-index: 2;
+    border-style: dashed;
+}
+
+.stackLayer:nth-child(3) {
+    animation-delay: 0.4s;
+    bottom: 80px;
+    z-index: 3;
+}
+
+@keyframes floatStack {
+
+    0%,
+    100% {
+        transform: rotateX(60deg) rotateZ(45deg) translateZ(0);
+    }
+
+    50% {
+        transform: rotateX(60deg) rotateZ(45deg) translateZ(20px);
+    }
+}
+
+/* 3. Grid (IB) - Complex Data Grid */
+.gridDot {
+    fill: #000000;
+    transition: fill 0.5s ease;
+}
+
+.gridLine {
+    stroke: #000000;
+    stroke-width: 0.8;
+    stroke-dasharray: 2;
+    opacity: 0.5;
+    animation: dash 30s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 100;
+    }
+}
+
+/* 4. Sphere (FO) - Detailed Geodesic */
+.orbitRing {
+    position: absolute;
+    border: 1px solid #111111;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: orbitRotate 15s linear infinite;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.orbitRing::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    border: 1px dotted rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.orbitRing:nth-child(2) {
+    transform: rotateX(60deg);
+    animation-delay: -3s;
+}
+
+.orbitRing:nth-child(3) {
+    transform: rotateY(60deg);
+    animation-delay: -6s;
+}
+
+.orbitRing:nth-child(4) {
+    transform: rotateX(-45deg);
+    animation-delay: -9s;
+    border-color: rgba(0, 0, 0, 0.6);
+}
+
+@keyframes orbitRotate {
+    from {
+        transform: rotate3d(1, 1, 1, 0deg);
+    }
+
+    to {
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

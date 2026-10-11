@@ -1,0 +1,377 @@
+/* Main Container */
+.main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    font-family: var(--font-inter);
+    color: var(--text-primary);
+    overflow: visible;
+}
+
+/* Hero Section */
+.heroSection {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 40px;
+    background-color: #F8FAFC;
+    z-index: 10;
+}
+
+.heroBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 1.0;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.heroTitle {
+    /* Main "Intelligent Agents" = Poppins Bold */
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 32px;
+    background: linear-gradient(180deg, #1A1A1A 0%, #4A4A4A 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    letter-spacing: -0.01em;
+    line-height: 1.5;
+}
+
+/* 
+   SCROLL TRACK
+*/
+.lockScrollTrack {
+    height: 700vh;
+    width: 100%;
+    position: relative;
+    background: #FFFFFF;
+}
+
+/* 
+   VIEWPORT
+*/
+.lockedViewport {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Changed from center to fix alignment */
+    padding-top: 110px;
+    /* Reduced from 140px to move content up */
+    background: #FFFFFF;
+    z-index: 20;
+}
+
+/* 
+   STEPPER
+*/
+.stepperContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    /* Reduced from 50px */
+    z-index: 30;
+    padding: 0 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.stepPill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px 12px 16px;
+    border-radius: 9999px;
+    border: 1px solid #E5E7EB;
+    background: #FFFFFF;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0.5;
+    cursor: default;
+}
+
+.stepPillActive {
+    border-color: #1A1A1A;
+    background: #FAFAFA;
+    opacity: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.stepIconWrapper {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconCircle {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid #D1D5DB;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6B7280;
+}
+
+.stepPillActive .iconCircle {
+    border-color: #1A1A1A;
+    background: #1A1A1A;
+    color: white;
+}
+
+.stepLabel {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1A1A1A;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+
+/* 
+   CONTENT GRID
+*/
+.contentGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+    max-height: 75vh;
+    padding: 0 60px;
+    align-items: flex-start;
+}
+
+/* Left: Text Content */
+.textContentWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Changed from center to enforce strict top alignment */
+    position: relative;
+    padding-right: 40px;
+    height: 100%;
+}
+
+.parallaxTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    will-change: transform;
+}
+
+.separatorLineTop {
+    width: 100%;
+    height: 1px;
+    background: #F3F4F6;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.separatorLineBottom {
+    width: 100%;
+    height: 1px;
+    background: #F3F4F6;
+    margin-top: 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gradientProgress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #1A1A1A, #6366F1);
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/* Typography & Layout */
+.agentTitle {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 4rem;
+    /* REDUCED per request ("slightly smaller") */
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.04em;
+    color: #1A1A1A;
+}
+
+.agentDescription {
+    /* Reverting to Universal Inter for body text */
+    font-family: var(--font-inter), sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #4B5563;
+    margin-bottom: 40px;
+    font-weight: 400;
+    max-width: 95%;
+}
+
+.featureList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 
+   FEATURE ACCORDION ITEMS 
+*/
+.featureItem {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    transition: all 0.3s ease;
+    border-left: 2px solid #E5E7EB;
+    padding-left: 20px;
+}
+
+.featureItemActive {
+    border-left-color: #1A1A1A;
+}
+
+.featureHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.featureDot {
+    display: none;
+}
+
+.featureTitleText {
+    font-family: var(--font-inter);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #9CA3AF;
+    transition: color 0.3s ease;
+}
+
+.featureItemActive .featureTitleText {
+    color: #1A1A1A;
+    font-weight: 600;
+}
+
+.featureDescWrapper {
+    overflow: hidden;
+}
+
+.featureDescText {
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    color: #4B5563;
+    line-height: 1.6;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    max-width: 90%;
+}
+
+/* Right: Visual Content */
+.visualContainer {
+    position: relative;
+    width: 100%;
+    height: 65vh;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #F8F9FA;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.visualImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 32px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Typography Accent - NEWSREADER */
+.italicAccent {
+    font-family: var(--font-newsreader), serif;
+    /* NEW FONT */
+    font-style: italic;
+    /* Explicitly italic */
+    font-weight: 400;
+    /* Regular as requested */
+    color: #1A1A1A;
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+        padding: 0 24px;
+        gap: 32px;
+        height: auto;
+        max-height: none;
+    }
+
+    .lockedViewport {
+        position: relative;
+        height: auto;
+        overflow: visible;
+        padding-top: 40px;
+        display: block;
+    }
+
+    .lockScrollTrack {
+        height: auto;
+    }
+
+    .heroTitle,
+    .agentTitle {
+        font-size: 3rem;
+    }
+
+    .visualContainer {
+        height: 50vh;
+    }
+}

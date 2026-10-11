@@ -1,0 +1,157 @@
+.section {
+    padding: 8rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    /* WHITE BACKGROUND when scrolling past hero */
+    background: #FFFFFF;
+    position: relative;
+    z-index: 20;
+    /* Above hero */
+}
+
+.card {
+    background: rgba(20, 20, 20, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 2rem;
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.iconBlue {
+    color: #60A5FA;
+}
+
+.iconPurple {
+    color: #C084FC;
+}
+
+.iconGreen {
+    color: #4ADE80;
+}
+
+.cardTitle {
+    font-family: var(--font-editorial);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--foreground);
+}
+
+.cardDesc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.widgetFrame {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Extraction Animation */
+.tableRow {
+    height: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    opacity: 0;
+    animation: fadeInRow 4s infinite;
+}
+
+.tableCell {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+@keyframes fadeInRow {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Chat Animation */
+.chatBubble {
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    max-width: 80%;
+    opacity: 0;
+    animation: popIn 5s infinite;
+}
+
+.user {
+    background: rgba(255, 255, 255, 0.1);
+    align-self: flex-end;
+    margin-left: auto;
+    border-bottom-right-radius: 2px;
+}
+
+.agent {
+    background: #3B82F6;
+    color: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    5% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

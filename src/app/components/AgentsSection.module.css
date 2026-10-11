@@ -1,0 +1,151 @@
+/* AgentsSection.module.css */
+
+.section {
+    width: 100%;
+    background: #F2F2F2;
+    /* Light grey background to let white cards pop (Apple style) */
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* MAIN CARD CONTAINER */
+.agentCard {
+    width: 100%;
+    max-width: 1200px;
+    background: #FFFFFF;
+    border-radius: 32px;
+    /* Large rounded corners */
+    padding: 1rem;
+    /* Inner padding for the "white lines" feel? Or just gap */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* Gap becomes the "white line" if background was different, but here we use structure */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+/* TOP SPLIT SECTION */
+.cardTop {
+    display: flex;
+    gap: 1rem;
+    height: 500px;
+    /* Fixed height for consistency */
+}
+
+/* Two Squares (Left and Right) */
+.cardContentBox {
+    flex: 1;
+    background: #FAFAFA;
+    /* Slightly distinct background */
+    border-radius: 24px;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cardVisualBox {
+    flex: 1.2;
+    /* Slightly larger for visual? User said two squares, let's try 1:1 or close */
+    background: #F5F5F7;
+    /* Image background */
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agentImage {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.agentCard:hover .agentImage {
+    transform: scale(1.03);
+}
+
+/* TEXT TYPOGRAPHY */
+.label {
+    font-family: var(--font-inter);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.headline {
+    font-family: var(--font-inter);
+    font-size: 2.5rem;
+    line-height: 1.1;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+}
+
+.description {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #555;
+    font-weight: 400;
+}
+
+/* BOTTOM STATS ROW */
+.cardBottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* "Three small rectangles" */
+    gap: 1rem;
+}
+
+.statBox {
+    background: #FAFAFA;
+    border-radius: 24px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.statValue {
+    font-family: var(--font-inter);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-bottom: 0.5rem;
+}
+
+.statLabel {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* SECURITY SECTION REDESIGN */
+.securitySection {
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .cardTop {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .cardBottom {
+        grid-template-columns: 1fr;
+    }
+}

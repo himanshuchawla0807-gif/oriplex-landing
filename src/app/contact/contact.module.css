@@ -1,0 +1,152 @@
+.section {
+    padding: 160px 20px 120px;
+    min-height: 100vh;
+    background: #FAFAFA;
+    /* Perplexity-ish Off-White */
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 640px;
+    /* Narrower focus like Perplexity search */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.headline {
+    font-family: var(--font-poppins);
+    font-size: 3rem;
+    font-weight: 500;
+    color: #111;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+}
+
+.subheadline {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Card */
+.card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    /* Soft rounding */
+    padding: 48px;
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.fieldGroup {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-family: var(--font-inter);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: #F8F8F8;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    color: #111;
+    transition: all 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+    background: #FFF;
+    border-color: #E0E0E0;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+    /* Detailed focus ring */
+    outline: none;
+}
+
+.submitButton {
+    margin-top: 16px;
+    padding: 16px;
+    width: 100%;
+    background: #111;
+    color: #FFF;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.submitButton:hover {
+    opacity: 0.9;
+}
+
+.submitButton:active {
+    transform: scale(0.99);
+}
+
+.successState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.checkIcon {
+    width: 64px;
+    height: 64px;
+    background: #E6F4EA;
+    color: #1E8E3E;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.resetButton {
+    margin-top: 32px;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #666;
+    font-size: 0.9rem;
+}
