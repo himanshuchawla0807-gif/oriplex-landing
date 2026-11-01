@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://oriplex.tech/sitemap.xml

@@ -42,6 +42,7 @@ next-env.d.ts
 
 # Local design drafts and original media; publish only assets used by the site.
 /.agent/
+/openplex-site/dist/
 /*.png
 /*.jpg
 /public/assets/*

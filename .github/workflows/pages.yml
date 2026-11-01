@@ -1,4 +1,4 @@
-name: Publish landing page
+name: Publish OpenPlex landing page
 on:
   push:
     branches: [main]
@@ -13,18 +13,19 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          node-version: '22'
-          cache: npm
-      - uses: actions/configure-pages@v5
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          path: out
+          node-version: '24'
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
+      - run: node openplex-site/build.mjs
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        with:
+          path: openplex-site/dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -32,5 +33,5 @@ jobs:
       name: github-pages
       url: ${{ steps.publish.outputs.page_url }}
     steps:
-      - uses: actions/deploy-pages@v5
+      - uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346
         id: publish
