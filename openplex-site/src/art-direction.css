@@ -1,0 +1,72 @@
+/* Generated editorial artwork belongs beside the product, clear of its controls. */
+.campus-art-figure {
+  max-width: 1440px;
+  margin: 42px auto 0;
+  padding: 0 5%;
+}
+
+.campus-art-caption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 2px 13px;
+  color: var(--muted);
+  font-size: 10px;
+  text-align: left;
+}
+
+.campus-art-caption > span:last-child {
+  margin-left: auto;
+  font-size: 8px;
+  letter-spacing: 1.4px;
+}
+
+.campus-art-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1717 / 916;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.campus-art-figure figcaption {
+  padding: 18px 0 29px;
+  font: italic 18px / 1.5 var(--serif);
+  color: var(--plum);
+}
+
+.scientific-cutout {
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.orbital-cutout {
+  width: 146px;
+  height: 146px;
+  margin: 24px 0 0 12px;
+}
+
+.mobius-cutout {
+  width: 174px;
+  height: 140px;
+  margin: 14px 0 0;
+}
+
+@media (max-width: 900px) {
+  .orbital-cutout { width: 120px; height: 120px; margin-top: 20px; }
+  .mobius-cutout { width: 150px; height: 120px; }
+}
+
+@media (max-width: 600px) {
+  .campus-art-figure { padding: 0 4%; margin-top: 32px; }
+  .campus-art-caption { font-size: 8px; padding-bottom: 10px; }
+  .campus-art-caption > span:last-child { display: none; }
+  .campus-art-image { aspect-ratio: 1717 / 916; object-fit: contain; border-radius: 12px; }
+  .campus-art-figure figcaption { font-size: 15px; padding: 13px 0 23px; }
+  .introduction .section-heading, .ownership-title { position: relative; }
+  .introduction .section-heading { padding-right: 62px; }
+  .introduction .section-heading h2 { font-size: clamp(32px, 9vw, 41px); }
+  .orbital-cutout { position: absolute; right: -8px; bottom: 0; width: 84px; height: 84px; margin: 0; }
+  .mobius-cutout { width: 116px; height: 88px; margin: 10px 0 0; }
+}
